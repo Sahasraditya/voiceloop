@@ -1,0 +1,183 @@
+{
+  "name": "VoiceLoop Orchestrator",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "call-end",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "name": "Webhook (Call End)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8000/call/analyze",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { \"call_id\": $json.body.call_id } }}"
+      },
+      "name": "Run Analysis",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [200, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8000/analysis/save",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { \"call_id\": $('Webhook (Call End)').item.json.body.call_id, \"analysis\": $json } }}"
+      },
+      "name": "Save Analysis",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [400, 0]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "http://127.0.0.1:8000/analysis/all"
+      },
+      "name": "Check Threshold",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [600, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { total_analyses: $input.all().length } }];"
+      },
+      "name": "Count Analyses",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [800, 0]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$json.total_analyses}}",
+              "operation": "largerEqual",
+              "value2": 2
+            }
+          ]
+        }
+      },
+      "name": ">= 2 Analyses?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1000, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8000/script/optimize"
+      },
+      "name": "Run Optimizer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1200, -100]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8000/script/save",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { \"script\": $json } }}"
+      },
+      "name": "Save Optimized Script",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1400, -100]
+    }
+  ],
+  "connections": {
+    "Webhook (Call End)": {
+      "main": [
+        [
+          {
+            "node": "Run Analysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run Analysis": {
+      "main": [
+        [
+          {
+            "node": "Save Analysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Analysis": {
+      "main": [
+        [
+          {
+            "node": "Check Threshold",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Threshold": {
+      "main": [
+        [
+          {
+            "node": "Count Analyses",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Count Analyses": {
+      "main": [
+        [
+          {
+            "node": ">= 2 Analyses?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    ">= 2 Analyses?": {
+      "main": [
+        [
+          {
+            "node": "Run Optimizer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run Optimizer": {
+      "main": [
+        [
+          {
+            "node": "Save Optimized Script",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {}
+}
