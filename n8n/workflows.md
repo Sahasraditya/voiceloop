@@ -81,7 +81,7 @@ Set them up in this order — each one references the next.
 - We need the count to decide whether to optimize
 
 **5. IF Node — Enough Data to Optimize?**
-- Condition: `{{ $json.length >= 2 }}`
+- Condition: `{{ $json.length >= 1 }}`
 - True branch → proceed to node 6
 - False branch → end workflow
 
@@ -134,7 +134,7 @@ Set them up in this order — each one references the next.
 2. Import or recreate these three workflows in n8n
 3. Activate all three workflows
 4. Start Streamlit, run a call, click "End Call"
-5. Watch the n8n execution log — you should see Workflow 1 → 2 → (after 2 calls) → 3
+5. Watch the n8n execution log — you should see Workflow 1 → 2 → 3 after the first analyzed call
 6. After Workflow 3 runs, refresh the Streamlit script panel — version should increment
 
 ---
@@ -145,5 +145,5 @@ Set them up in this order — each one references the next.
   n8n only handles the post-call pipeline. This keeps n8n simple and avoids polling.
 - If n8n is not running, you can manually trigger analysis and optimization by hitting
   the backend endpoints directly via curl or the Swagger UI at `http://localhost:8000/docs`.
-- The IF node threshold (≥2 analyses) is intentionally low for demo purposes.
-  In production you'd want more data before optimizing.
+- The IF node threshold (≥1 analysis) is intentionally aggressive for demo purposes.
+  In production you'd usually want more data before optimizing.

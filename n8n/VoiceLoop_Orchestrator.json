@@ -65,12 +65,12 @@
             {
               "value1": "={{$json.total_analyses}}",
               "operation": "largerEqual",
-              "value2": 2
+              "value2": 1
             }
           ]
         }
       },
-      "name": ">= 2 Analyses?",
+      "name": ">= 1 Analysis?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [1000, 0]
@@ -148,14 +148,14 @@
       "main": [
         [
           {
-            "node": ">= 2 Analyses?",
+            "node": ">= 1 Analysis?",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    ">= 2 Analyses?": {
+    ">= 1 Analysis?": {
       "main": [
         [
           {

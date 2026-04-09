@@ -106,6 +106,27 @@ def get_script():
     return resp.json()
 
 
+def get_latest_changed_sections(script: dict, prev_sections: dict) -> set:
+    latest_entry = (script.get("change_log") or [])[-1] if script.get("change_log") else None
+    if latest_entry and isinstance(latest_entry.get("changes"), dict):
+        return set(latest_entry["changes"].keys())
+
+    changed = set()
+    for section_name, text in script.get("sections", {}).items():
+        if prev_sections.get(section_name) != text:
+            changed.add(section_name)
+    return changed
+
+
+def render_change_log_entry(entry: dict):
+    if isinstance(entry.get("changes"), dict):
+        for section, explanation in entry["changes"].items():
+            st.markdown(f"**{section.replace('_', ' ').title()}**")
+            st.markdown(explanation)
+    else:
+        st.markdown(entry.get("reason", "") or entry.get("description", ""))
+
+
 def end_call_and_analyze():
     """Save transcript and delegate analysis and optimization to n8n."""
     # 1. Save transcript
@@ -197,9 +218,7 @@ with col_call:
 
             if success:
                 st.session_state.call_active = False
-                msg = f"Call ended (ID: {call_id}). Analysis saved."
-                if num_analyses >= 2:
-                    msg += " Script optimized — see Current Script panel."
+                msg = f"Call ended (ID: {call_id}). Analysis saved. If n8n is active, the script may update immediately."
                 st.success(msg)
                 st.rerun()
             else:
@@ -266,13 +285,20 @@ with col_script:
             except Exception:
                 pass
 
+        latest_changed_sections = get_latest_changed_sections(script, prev_sections)
+        if latest_changed_sections:
+            changed_labels = ", ".join(
+                section.replace("_", " ").title() for section in latest_changed_sections
+            )
+            st.info(f"Updated in latest version: {changed_labels}")
+
         for section_name, text in sections.items():
-            changed = prev_sections.get(section_name) != text and bool(prev_sections)
+            changed = section_name in latest_changed_sections
             label = f"**{section_name.replace('_', ' ').title()}**"
             if changed:
-                st.markdown(label)
+                st.markdown(f"{label} `updated`")
                 st.markdown(
-                    f"<div style='background:#f3f8f2;color:#111;padding:10px 12px;border-radius:6px;border-left:3px solid #7aa874'>{text}</div>",
+                    f"<div style='background:#eef7ea;color:#111;padding:10px 12px;border-radius:6px;border-left:4px solid #6f9f5a'>{text}</div>",
                     unsafe_allow_html=True,
                 )
             else:
@@ -296,9 +322,24 @@ with col_log:
     if st.button("Refresh"):
         st.rerun()
 
+    try:
+        script = current_script if current_script else get_script()
+        change_log = script.get("change_log", [])
+        if change_log:
+            st.subheader("Script Change Log")
+            for entry in reversed(change_log):
+                header = f"v{entry.get('version', '?')}"
+                if entry.get("date"):
+                    header += f" — {entry['date']}"
+                with st.expander(header, expanded=(entry == change_log[-1])):
+                    render_change_log_entry(entry)
+    except Exception:
+        pass
+
     if not analyses:
         st.info("No analyses yet. End a call to trigger analysis.")
     else:
+        st.subheader("Recent Call Analyses")
         st.markdown(f"**{len(analyses)} call(s) analyzed**")
         for a in reversed(analyses):
             outcome_text = a["outcome"].replace("_", " ").title()
@@ -311,14 +352,3 @@ with col_log:
                     st.markdown(f"**Issue:** {rec['issue']}")
                     st.markdown(f"**Suggestion:** {rec['suggestion']}")
             st.divider()
-
-    try:
-        script = get_script()
-        change_log = script.get("change_log", [])
-        if change_log:
-            st.subheader("Script Change Log")
-            for entry in reversed(change_log):
-                with st.expander(f"v{entry.get('version', '?')} — {entry.get('section', '')}"):
-                    st.markdown(entry.get("reason", "") or entry.get("description", ""))
-    except Exception:
-        pass
