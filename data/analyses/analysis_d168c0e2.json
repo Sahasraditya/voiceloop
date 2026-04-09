@@ -1,0 +1,31 @@
+{
+  "outcome": "callback_scheduled",
+  "objections_raised": [
+    "time_constraint"
+  ],
+  "objection_outcomes": [
+    {
+      "objection": "this really isn't the best time for me to be discussing new catering services.",
+      "outcome": "acknowledged and offered alternatives for scheduling"
+    }
+  ],
+  "recommendations": [
+    {
+      "section": "Opening/Discovery",
+      "issue": "The agent assumed the principal's pain point without confirming it, leading straight into a pitch.",
+      "suggestion": "Before pitching, ask more open-ended questions to uncover specific catering challenges or current plans the school has for graduation. For example, 'What's your biggest catering challenge for graduation events this year?'"
+    },
+    {
+      "section": "Value Proposition",
+      "issue": "The initial value proposition was a bit generic ('flame-grilled favorites that students already love').",
+      "suggestion": "Personalize the value proposition by highlighting specific Burger King offerings or benefits that directly address common school event needs, like diverse meal options, customizable menus, or specific delivery logistics for large groups."
+    },
+    {
+      "section": "Handling Objections",
+      "issue": "When the prospect raised a time objection, the agent immediately tried to reduce the time or reschedule without first validating the prospect's current situation more deeply.",
+      "suggestion": "Before offering to shorten the call or reschedule, validate the prospect's busy schedule and try to understand the underlying reason for the time constraint. For example, 'I completely understand how hectic graduation season can be. What specific preparations are taking up most of your time right now?' This can build rapport and potentially uncover other needs."
+    }
+  ],
+  "duration_turns": 5,
+  "call_id": "d168c0e2"
+}

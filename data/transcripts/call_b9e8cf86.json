@@ -1,0 +1,18 @@
+{
+  "call_id": "b9e8cf86",
+  "script_version": 1,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "Hello Principal [Principal's Last Name], this is [Sales Agent Name] from Burger King. With graduation season approaching, I'm calling because many schools face challenges with large-scale catering. Before I go further, could you share roughly how many students are graduating this year, and what your biggest catering challenge for the event typically is?"
+    },
+    {
+      "role": "prospect",
+      "text": "No i am not interested"
+    },
+    {
+      "role": "agent",
+      "text": "I understand you might be busy, Principal. Many schools we've spoken with are looking for hassle-free options for graduation. Our new catering service simplifies feeding large groups, offering diverse, flame-grilled favorites students already love. We handle all the details so you can focus on celebrating their big day."
+    }
+  ]
+}

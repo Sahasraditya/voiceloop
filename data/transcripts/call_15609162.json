@@ -1,0 +1,58 @@
+{
+  "call_id": "15609162",
+  "script_version": 0,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "Hello Principal [Principal's Last Name], this is [Sales Agent Name] from Burger King. I'm calling because with graduation just around the corner, ensuring a memorable and hassle-free dining experience for 150 students can be quite a challenge, couldn't it?"
+    },
+    {
+      "role": "prospect",
+      "text": "I dont have 150 students but 1000 but yes"
+    },
+    {
+      "role": "agent",
+      "text": "Thank you for clarifying, Principal! 1000 students is certainly a significant celebration, and making sure everyone is fed well and without stress is even more critical. Our new catering service is perfectly designed to handle large-scale events like this.\n\nWe offer delicious, flame-grilled favorites that students already love, delivered fresh and hot, making it easy to satisfy 1000 graduates. We handle all the details so you can focus on celebrating their big day, without compromising on quality or your budget."
+    },
+    {
+      "role": "prospect",
+      "text": "do you have vegan options?"
+    },
+    {
+      "role": "agent",
+      "text": "Yes, we do! We understand the importance of catering to diverse dietary needs, especially for a large group. Our menu includes popular vegan options, like the Impossible Whopper, ensuring every student has a delicious choice.\n\nWe can tailor a package that accommodates all preferences, making sure everyone enjoys their meal. A complimentary tasting would be a great way to explore these options firsthand."
+    },
+    {
+      "role": "prospect",
+      "text": "Okay, what kind of packages do you serve?  what are the number of unique dishes you could serve to a party of 1000 students?"
+    },
+    {
+      "role": "agent",
+      "text": "That's a great question, Principal. We offer flexible packages designed to accommodate large groups like yours, focusing on a selection of our most popular, crowd-pleasing items.\n\nFor 1000 students, we can offer a core set of unique dishes, including our classic Whopper, chicken sandwiches, and the Impossible Whopper, along with sides. A complimentary tasting would allow you to sample these options firsthand and see how we can customize for your event."
+    },
+    {
+      "role": "prospect",
+      "text": "Okay, when can we schedule a tasting?"
+    },
+    {
+      "role": "agent",
+      "text": "Excellent! I'd love to offer you and your team a complimentary tasting of our most popular catering options. This will give you a firsthand experience of the quality and convenience we provide.\n\nWould Tuesday or Thursday afternoon next week work for a quick tasting at your convenience?"
+    },
+    {
+      "role": "prospect",
+      "text": "Lets do Tuesday afternoon, please come over to school"
+    },
+    {
+      "role": "agent",
+      "text": "Wonderful, Principal! Tuesday afternoon works perfectly for us.\n\nTo finalize, could you please let me know a specific time on Tuesday that works best for you? We'll bring everything needed for the tasting right to your school."
+    },
+    {
+      "role": "prospect",
+      "text": "3pm on Tuesday"
+    },
+    {
+      "role": "agent",
+      "text": "Perfect, Principal. So, it's set for Tuesday afternoon at 3 PM, right at the school.\n\nI'll send over a quick calendar invitation with the details now. We're really looking forward to showcasing our catering options for your graduation event!"
+    }
+  ]
+}

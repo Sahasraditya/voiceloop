@@ -1,0 +1,41 @@
+{
+  "outcome": "callback_scheduled",
+  "objections_raised": [
+    "Incorrect assumption of student count",
+    "Availability of vegan options",
+    "Request for specific package and dish variety details"
+  ],
+  "objection_outcomes": [
+    {
+      "objection": "Incorrect assumption of student count",
+      "outcome": "Agent acknowledged and corrected the initial premise, adapting the pitch to the larger scale effectively."
+    },
+    {
+      "objection": "Availability of vegan options",
+      "outcome": "Agent confirmed vegan options (Impossible Whopper) are available and offered a complimentary tasting to explore them further."
+    },
+    {
+      "objection": "Request for specific package and dish variety details",
+      "outcome": "Agent provided a general overview of core dishes and reiterated the tasting opportunity for customization and firsthand experience."
+    }
+  ],
+  "recommendations": [
+    {
+      "section": "Opening/Discovery",
+      "issue": "The agent made an incorrect assumption about the prospect's student count (150 vs 1000) in the opening statement.",
+      "suggestion": "Always verify key details like scale upfront, perhaps with an open-ended question, to ensure the pitch is immediately relevant and accurate. For example, 'Approximately how many students are graduating this year?'"
+    },
+    {
+      "section": "Product/Service Explanation",
+      "issue": "When asked about specific packages and the number of unique dishes for 1000 students, the agent's answer was somewhat vague ('core set of unique dishes').",
+      "suggestion": "While customization is key, provide more concrete examples or a 'typical package' structure with a clear number of unique items for large events. This helps the prospect visualize the offering more clearly before a tasting."
+    },
+    {
+      "section": "Scheduling/Logistics",
+      "issue": "The agent secured 'Tuesday afternoon' for the tasting but had to make an additional turn to get the specific time.",
+      "suggestion": "When proposing scheduling options, try to offer specific time slots (e.g., 'Would Tuesday or Thursday next week at 3 PM or 4 PM work?') or immediately ask for the specific time once the day is confirmed to streamline the process."
+    }
+  ],
+  "duration_turns": 11,
+  "call_id": "15609162"
+}

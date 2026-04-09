@@ -52,7 +52,6 @@ Core files:
 1. Install dependencies
 
 ```bash
-cd call-agent
 pip install -r requirements.txt
 ```
 

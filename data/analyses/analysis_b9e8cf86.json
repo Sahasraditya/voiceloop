@@ -1,0 +1,31 @@
+{
+  "outcome": "no_conversion",
+  "objections_raised": [
+    "not interested"
+  ],
+  "objection_outcomes": [
+    {
+      "objection": "not interested",
+      "outcome": "unresolved"
+    }
+  ],
+  "recommendations": [
+    {
+      "section": "Opening/Discovery",
+      "issue": "The initial discovery questions were posed too early without first establishing permission or sufficient interest, leading to an immediate shutdown.",
+      "suggestion": "Before diving into specific questions about student numbers and challenges, establish a micro-commitment. For example, 'I'm calling about hassle-free graduation catering; would you be open to a quick 20-second overview to see if it's relevant?'"
+    },
+    {
+      "section": "Value Proposition",
+      "issue": "The initial value proposition was generic ('many schools face challenges with large-scale catering') and did not immediately resonate with the prospect.",
+      "suggestion": "Craft a more specific and compelling 'reason to listen' tailored to the school context. For instance, 'We help schools like yours eliminate the stress of managing large-scale graduation meals, allowing you to focus on the celebration, not the logistics.'"
+    },
+    {
+      "section": "Objection Handling",
+      "issue": "While the agent empathized, the response to 'not interested' immediately pivoted back to a general solution without first uncovering the *reason* for the disinterest.",
+      "suggestion": "When a prospect states 'not interested,' acknowledge their statement, then ask a clarifying question to understand the underlying reason. For example, 'I understand you might be busy, Principal. Is it that you're already all set with catering, or is this simply not a priority right now?' This helps tailor the subsequent value proposition more effectively."
+    }
+  ],
+  "duration_turns": 3,
+  "call_id": "b9e8cf86"
+}

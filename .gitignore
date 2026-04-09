@@ -1,8 +1,11 @@
 .env
 venv/
 backend/venv/
+call-agent/venv/
 __pycache__/
 frontend/__pycache__/
 backend/__pycache__/
 *.pyc
 .DS_Store
+.codex/
+backend/=1.30.0

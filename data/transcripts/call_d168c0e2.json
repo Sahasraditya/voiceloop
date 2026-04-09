@@ -1,0 +1,26 @@
+{
+  "call_id": "d168c0e2",
+  "script_version": 0,
+  "turns": [
+    {
+      "role": "agent",
+      "text": "Hello Principal [Principal's Last Name], this is [Sales Agent Name] from Burger King. I'm calling because with graduation just around the corner, ensuring a memorable and hassle-free dining experience for 150 students can be quite a challenge, couldn't it?"
+    },
+    {
+      "role": "prospect",
+      "text": "Hello [Sales Agent Name], it's Principal [Principal's Last Name]. You're not wrong, organizing a graduation for 150 students certainly keeps us on our toes. We always aim for a memorable day for them."
+    },
+    {
+      "role": "agent",
+      "text": "That's exactly what we help with! Our new catering service takes the stress out of feeding a large group, offering delicious, flame-grilled favorites that students already love, delivered fresh and hot. Imagine satisfying 150 graduates with ease, without compromising on quality or your budget. We handle all the details so you can focus on celebrating their big day."
+    },
+    {
+      "role": "prospect",
+      "text": "I appreciate you reaching out, [Sales Agent Name]. Flame-grilled favorites certainly sound appealing, and taking stress out of the equation is always a plus. However, I must admit, with graduation events in full swing and final preparations underway, this really isn't the best time for me to be discussing new catering services."
+    },
+    {
+      "role": "agent",
+      "text": "I respect your time, Principal. I only need about 10-15 minutes to quickly show you how seamless we can make the graduation catering. If now isn't ideal, I'd be happy to schedule a brief call at your convenience next week, or perhaps even send a quick 2-minute video overview?"
+    }
+  ]
+}

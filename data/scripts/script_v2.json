@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "sections": {
+    "opener": "Hello Principal [Principal's Last Name], this is [Sales Agent Name] from Burger King. I'm calling because we've developed a hassle-free catering service that helps schools simplify feeding large groups for events like graduation, allowing you to focus on the celebration, not the logistics. Would you be open to a quick 20-second overview to see if this could be relevant for your upcoming graduation event? (If yes) Great! To ensure I'm providing the most relevant information, could you share roughly how many students are graduating this year, and what your biggest catering challenge for the event typically is?",
+    "value_prop": "Our new catering service is designed to simplify feeding large groups, offering diverse, flame-grilled favorites students already love, like our classic Whopper, Impossible Whopper for vegan guests, and crispy chicken sandwiches, delivered fresh and hot. We offer customizable packages, such as our 'Grad Feast' which includes a choice of three entrees, two sides, and a dessert option, ensuring every student finds something delicious while meeting diverse dietary needs. We handle all the details, from menu planning to delivery logistics, so you can focus on celebrating their big day without compromising on quality or your budget, and significantly reduce administrative hassle.",
+    "pricing_handle": "I completely understand that budget is a key consideration for school events. Our catering solutions are designed to be cost-effective while delivering incredible value and student satisfaction, minimizing complaints and maximizing smiles. We can tailor a package that fits your specific needs and ensures a high return on investment in terms of student happiness and administrative ease.",
+    "timing_objection": "I completely understand, Principal. Graduation season can be incredibly hectic. What specific preparations are taking up most of your time right now? (Pause for response) I only need about 10-15 minutes to quickly show you how seamless we can make the graduation catering. If now truly isn't ideal, I'd be happy to schedule a brief call at your convenience next week, or perhaps even send a quick 2-minute video overview?",
+    "close": "Given the importance of this event, I'd love to offer you and your team a complimentary tasting of our most popular catering options. This would give you a firsthand experience of the quality and convenience we provide, helping you make a confident decision for your graduates. Would Tuesday next week at 2 PM or 4 PM, or perhaps Thursday at 10 AM or 3 PM work for a quick tasting?"
+  },
+  "change_log": [
+    {
+      "version": 1,
+      "description": "Rewrote 'opener' to include open-ended questions for student count verification and pain point discovery. Updated 'value_prop' to be less generic, mentioning specific items and customizable packages. Modified 'timing_objection' to include a validation step before offering to reschedule. Enhanced 'close' to provide specific time slots for tasting appointments."
+    },
+    {
+      "version": 2,
+      "description": "Rewrote 'opener' to include a micro-commitment question before discovery, moving from an assumption-based to a permission-based approach, and offering a more specific 'reason to listen'. Rewrote 'value_prop' to provide more concrete package examples, highlight specific dietary accommodations (e.g., Impossible Whopper for vegan guests), and directly address common school logistical and administrative needs, in response to feedback about being too generic."
+    }
+  ]
+}
