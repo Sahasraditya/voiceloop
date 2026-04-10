@@ -8,9 +8,10 @@ The implementation uses Gemini for agent behavior, prospect simulation, post-cal
 
 ## Demo Video
 
-A short walkthrough of the system is included in this repository:
+[![Watch the demo](./imageToLink.jpg)](https://www.youtube.com/watch?v=eMiKsyf3zCI)
 
-[Watch the demo video](./voiceloop-demo_ILzUfos3.mp4)
+A short walkthrough of the system is available on YouTube:
+https://www.youtube.com/watch?v=eMiKsyf3zCI
 
 The demo shows:
 - campaign setup in the Streamlit UI
