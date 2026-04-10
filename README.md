@@ -6,6 +6,20 @@ The implementation uses Gemini for agent behavior, prospect simulation, post-cal
 
 ---
 
+## Demo Video
+
+A short walkthrough of the system is included in this repository:
+
+[Watch the demo video](./voiceloop-demo_ILzUfos3.mp4)
+
+The demo shows:
+- campaign setup in the Streamlit UI
+- a simulated sales call with voice playback
+- post-call analysis and recommendation logging
+- script optimization and versioned change tracking
+
+---
+
 ## What It Does
 
 - Runs a simulated sales call through a Streamlit UI

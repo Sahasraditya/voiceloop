@@ -1,4 +1,5 @@
 import uuid
+from datetime import date
 from dotenv import load_dotenv
 load_dotenv()  # load .env before any os.getenv() calls
 
@@ -49,6 +50,17 @@ class ContextRequest(BaseModel):
     call_goal: str
 
 
+def stamp_latest_change_log_entry(script: dict) -> dict:
+    change_log = script.get("change_log")
+    if not change_log:
+        return script
+
+    latest_entry = change_log[-1]
+    latest_entry["version"] = script.get("version", latest_entry.get("version"))
+    latest_entry["date"] = date.today().isoformat()
+    return script
+
+
 # ── Routes ────────────────────────────────────────────────────────────────────
 
 @app.get("/health")
@@ -77,8 +89,9 @@ def get_current_script():
 
 @app.post("/script/save")
 def save_script(req: SaveScriptRequest):
-    path = storage.save_script(req.script)
-    return {"saved": path, "version": req.script["version"]}
+    script = stamp_latest_change_log_entry(req.script)
+    path = storage.save_script(script)
+    return {"saved": path, "version": script["version"]}
 
 
 @app.post("/script/optimize")
